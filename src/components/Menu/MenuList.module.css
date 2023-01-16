@@ -1,0 +1,22 @@
+.blockml {
+  padding-top: 30px;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  width: 0vw;
+  margin-left: 0vw;
+  border-radius: 10px;
+  box-shadow: 2ch;
+  /* min-height: 100vh; */
+}
+
+.blockml h1 {
+  text-align: center;
+  align-self: center;
+}
+.blockml ul {
+  list-style: none;
+  justify-content: space-between;
+  padding-bottom: 3vh;
+}

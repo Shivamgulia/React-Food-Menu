@@ -1,0 +1,27 @@
+.blockin {
+  margin: -21.5px;
+  padding: none;
+}
+
+.blockin h1 {
+  padding-left: 12vw;
+  margin-top: -20px;
+  font-size: 50px;
+  /* padding-top: 20vh; */
+  text-align: left;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.blockin h2 {
+  padding-left: 12vw;
+  padding-top: 20vh;
+  text-align: left;
+  color: white;
+}
+
+.blockin h3 {
+  color: white;
+  margin-top: -60px;
+  padding: 30px;
+}

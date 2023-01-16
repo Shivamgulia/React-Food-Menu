@@ -1,0 +1,25 @@
+.cart {
+}
+
+.price {
+  color: white;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+.text {
+  color: white;
+}
