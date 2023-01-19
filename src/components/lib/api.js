@@ -1,10 +1,13 @@
 export async function getAllFoods() {
-  const response = await fetch('http://localhost:8080/foods', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const response = await fetch(
+    'https://springfoodmenu.azurewebsites.net/foods',
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
 
   const data = await response.json();
 
@@ -32,13 +35,16 @@ export async function getAllFoods() {
 }
 
 export async function addOrder(orderData) {
-  const response = await fetch('http://localhost:8080/tables', {
-    method: 'PATCH',
-    body: JSON.stringify(orderData),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const response = await fetch(
+    'https://springfoodmenu.azurewebsites.net/tables',
+    {
+      method: 'PATCH',
+      body: JSON.stringify(orderData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
   const data = await response.json();
 
   if (!response.ok) {
@@ -48,7 +54,9 @@ export async function addOrder(orderData) {
 }
 
 export async function getTables(orderData) {
-  const response = await fetch('http://localhost:8080/tables');
+  const response = await fetch(
+    'https://springfoodmenu.azurewebsites.net/tables'
+  );
   const data = await response.json();
 
   if (!response.ok) {
