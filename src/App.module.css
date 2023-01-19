@@ -3,4 +3,5 @@
   text-align: center;
   background-color: black;
   min-height: 100vh;
+  min-width: 100vh;
 }

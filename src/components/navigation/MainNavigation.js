@@ -23,6 +23,9 @@ const MainNavigation = () => {
               <NavLink to="/menu">Menu</NavLink>
             </li>
             <li className={classes.items}>
+              <NavLink to="/orders">Orders</NavLink>
+            </li>
+            <li className={classes.items}>
               <NavLink to="/cart">Cart</NavLink>
             </li>
           </ul>

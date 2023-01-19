@@ -6,7 +6,6 @@ import classes from './MenuItem.module.css';
 
 const MenuItem = (props) => {
   const cartCtx = useContext(CartContext);
-  console.log();
   return (
     <div className={classes.blockmi}>
       <h1 className={classes.nm}>{props.item.name}</h1>

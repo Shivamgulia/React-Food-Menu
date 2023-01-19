@@ -1,61 +1,8 @@
-import React, {
-  Fragment,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import MenuList from '../components/Menu/MenuList';
+import React, { Fragment, useEffect } from 'react';
+import List from '../components/Menu/List';
 
 import useHttp from '../components/hooks/use-http';
 import { getAllFoods } from '../components/lib/api';
-
-import CartContext from '../store/CartProvider';
-
-const DUMMY_MENU = [
-  {
-    id: 1,
-    name: 'Roti',
-    description:
-      'Veg chapati is made from four, is cooked on tava and is delicately prepared. it is fuilled with starch',
-    price: 8,
-  },
-  {
-    id: 2,
-    name: 'Butter Roti',
-    description:
-      'Veg chapati is made from four, is cooked on tava and is delicately prepared. it is fuilled with starch, and butter is applied to it',
-    price: 10,
-  },
-  {
-    id: 3,
-    name: 'Roti',
-    description:
-      'Veg chapati is made from four, is cooked on tava and is delicately prepared. it is fuilled with starch',
-    price: 8,
-  },
-  {
-    id: 4,
-    name: 'Roti',
-    description:
-      'Veg chapati is made from four, is cooked on tava and is delicately prepared. it is fuilled with starch',
-    price: 8,
-  },
-  {
-    id: 5,
-    name: 'Roti',
-    description:
-      'Veg chapati is made from four, is cooked on tava and is delicately prepared. it is fuilled with starch',
-    price: 8,
-  },
-  {
-    id: 6,
-    name: 'Roti',
-    description:
-      'Veg chapati is made from four, is cooked on tava and is delicately prepared. it is fuilled with starch',
-    price: 8,
-  },
-];
 
 const Menu = () => {
   const {
@@ -64,29 +11,25 @@ const Menu = () => {
     data: loadedFoods,
     error,
   } = useHttp(getAllFoods, true);
-  const cartCtx = useContext(CartContext);
-  const [menu, setMenu] = useState(DUMMY_MENU);
+  // const [menu, setMenu] = useState(loadedFoods);
 
-  const sort = () => {
-    const cart = cartCtx.items;
-    const newMenu = menu.filter((el) => {
-      return cart.findIndex((e) => e.id === el.id) === -1;
-    });
-    setMenu([...cart, ...newMenu]);
-  };
+  // const sort = () => {
+  //   const cart = cartCtx.items;
+  //   const newMenu = menu.filter((el) => {
+  //     return cart.findIndex((e) => e.id === el.id) === -1;
+  //   });
+  //   setMenu([...cart, ...newMenu]);
+  // };
 
   useEffect(() => {
     sendRequest();
-    if (status === 'completed') setMenu(loadedFoods);
+    // setMenu(loadedFoods);
   }, [sendRequest]);
 
-  useEffect(() => {
-    sort();
-  }, [cartCtx.items, loadedFoods, status]);
-
-  useCallback(() => {
-    sendRequest();
-  }, [sendRequest]);
+  // useEffect(() => {
+  //   setMenu(loadedFoods);
+  //   sort();
+  // }, [cartCtx.items]);
 
   if (error) {
     return <p className="centered">{error}</p>;
@@ -101,7 +44,7 @@ const Menu = () => {
   }
 
   return (
-    <Fragment>{status === 'completed' && <MenuList list={menu} />}</Fragment>
+    <Fragment>{status === 'completed' && <List list={loadedFoods} />}</Fragment>
   );
 };
 
