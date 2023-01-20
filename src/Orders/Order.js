@@ -5,7 +5,7 @@ const Order = (props) => {
   return (
     <div className={classes.order}>
       <h1>Table Number : {props.item.id}</h1>
-      <MenuList list={props.item.order} />
+      <MenuList list={props.item.order} minus={true} />
     </div>
   );
 };

@@ -8,7 +8,9 @@ const MenuList = (props) => {
       <ul>
         <li className={classes.menuitem}>
           {!!props.list &&
-            props.list.map((item) => <MenuItem key={item.id} item={item} />)}
+            props.list.map((item) => (
+              <MenuItem minus={props.minus} key={item.id} item={item} />
+            ))}
         </li>
       </ul>
     </div>

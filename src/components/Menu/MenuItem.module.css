@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+.images {
+  justify-self: right;
+  width: auto;
+  padding: 10px;
+}
+
 .blockmi h1 {
   padding-top: 1.5vh;
   padding-left: 2vw;
